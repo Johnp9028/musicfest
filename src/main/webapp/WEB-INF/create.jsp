@@ -74,54 +74,54 @@
 </head>
 <body>
 	<h1>Create Music Fest Lineup</h1>
-	<form method="POST" action="#">
-		<label for="stage1">6-7 (Stage 1)</label>
+	<form method="POST" action="/view">
+		<label for="timeslot1">6-7 </label>
         <!-- have to change all the ID to fit the data we need to show up.For example, id= "artist1_stage1" -->
-		<select id="stage1" name="stage1">
+		<select id="timeslot1" name="timeslot1">
 			<option value="">Choose artist</option>
-			<option value="Artist 1">Artist 1</option>
-			<option value="Artist 2">Artist 2</option>
-			<option value="Artist 3">Artist 3</option>
+			<option value="Artist 1">Hall and Oats</option>
+			<option value="Artist 2">Bilyl Joel</option>
+			<option value="Artist 3">Motion City Soundtrack</option>
 		</select>
 
-		<label for="stage2">7-8 (Stage 2)</label>
-		<select id="stage2" name="stage2">
+		<label for="timeslot2">7-8 </label>
+		<select id="timeslot2" name="timeslot2">
 			<option value="">Choose artist</option>
-			<option value="Artist 1">Artist 1</option>
-			<option value="Artist 2">Artist 2</option>
-			<option value="Artist 3">Artist 3</option>
+			<option value="Artist 1">Thomas Rhett</option>
+			<option value="Artist 2">MOMOLAND</option>
+			<option value="Artist 3">ILLENIUM</option>
 		</select>
 
-		<label for="stage3">8-9 (Stage 3)</label>
-		<select id="stage3" name="stage3">
+		<label for="timeslot3">8-9</label>
+		<select id="timeslot3" name="timeslot3">
 		<option value="">Choose artist</option>
-		<option value="Artist 1">Artist 1</option>
-		<option value="Artist 2">Artist 2</option>
-		<option value="Artist 3">Artist 3</option>
+		<option value="Artist 1">Iann Dior</option>
+		<option value="Artist 2">The weekend</option>
+		<option value="Artist 3">Phil Colins</option>
 		</select>
 
-		<label for="stage1">9-10 (Stage 1)</label>
-		<select id="stage1" name="stage1">
+		<label for="timeslot4">9-10 </label>
+		<select id="timeslot4" name="timeslot4">
 		<option value="">Choose artist</option>
-		<option value="Artist 1">Artist 1</option>
-		<option value="Artist 2">Artist 2</option>
-		<option value="Artist 3">Artist 3</option>
+		<option value="Artist 1">Mayday Parade</option>
+		<option value="Artist 2">Blake Shelton</option>
+		<option value="Artist 3">Death Cab For Cutie</option>
 		</select>
 
-		<label for="stage2">10-11 (Stage 2)</label>
-		<select id="stage2" name="stage2">
+		<label for="timeslot5">10-11 </label>
+		<select id="timeslot5" name="timeslot5">
 		<option value="">Choose artist</option>
-		<option value="Artist 1">Artist 1</option>
-		<option value="Artist 2">Artist 2</option>
-		<option value="Artist 3">Artist 3</option>
+		<option value="Artist 1">Two Door Cinema</option>
+		<option value="Artist 2">Incubus</option>
+		<option value="Artist 3">Blink-182</option>
 		</select>
 
-		<label for="stage3">11-12 (Stage 3)</label>
-		<select id="stage3" name="stage3">
+		<label for="timeslot6">11-12</label>
+		<select id="timeslot6" name="timeslot6">
 		<option value="">Choose artist</option>
-		<option value="Artist 1">Artist 1</option>
-		<option value="Artist 2">Artist 2</option>
-		<option value="Artist 3">Artist 3</option>
+		<option value="Artist 1">Taylor Swift</option>
+		<option value="Artist 2">Elton John</option>
+		<option value="Artist 3">Cash Cash</option>
 		</select>
 
 		<button onclick="goHome()">Back to Home</button>
@@ -131,5 +131,9 @@
 		<br>
 		<br>
 		<button onclick="logout()">Logout</button>
+			<div class="form-row">
+				<input type="submit" value="Submit" class="btn-primary"/>
+			</div>
+			
 	</body>
 	</html>

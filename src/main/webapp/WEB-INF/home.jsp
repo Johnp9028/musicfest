@@ -22,7 +22,63 @@
 	<h1 class="text-center">HOME PAGE</h1>
 	<h1 class="text-center">Welcome, <c:out value="${user.userName}"/></h1><a   class="btn btn-outline-danger"href="/logout">logout</a>
 
+	<div class="mainTop">
+        <h2>7-FEST</h2>
+            <table>
+                <tr>
+                    <th> </th>
+                    <th>6-7</th>
+                    <th>7-8</th>
+                    <th>8-9</th>
+                    <th>9-10</th>
+                    <th>10-11</th>
+                    <th>11-12</th>
+                </tr>
+                <tr>
+                    <th>Stage 1</th>
+                    <th>Hall & Oates</th>
+                    <th>Thomas Rhett</th>
+                    <th>iann dior</th>
+                    <th>Mayday Parade</th>
+                    <th>Two Door Cinema</th>
+                    <th>Taylor Swift</th>
+                </tr>
+                <tr>
+                    <th>Stage 2</th>
+                    <th>Billy Joel</th>
+                    <th>MOMOLAND</th>
+                    <th>The Weeknd</th>
+                    <th>Blake Shelton</th>
+                    <th>Incubus</th>
+                    <th>Elton John</th>
+                </tr>
+                <tr>
+                    <th>Stage 3</th>
+                    <th>Motion City Soundtrack</th>
+                    <th>ILLENIUM</th>
+                    <th>Phil Collins</th>
+                    <th>Death Cab For Cutie</th>
+                    <th>blink-182</th>
+                    <th>Cash Cash</th>
+                </tr>
+            </table>
+	</div>
+		
+	<div class="mainBottom">
 
+        <div class="bottLeftDiv">
+            <a href="/create">Make Your Lineup</a>
+            <a href="/view">View Your Lineup</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+        <div class="bottRightDiv">
+            <h5>Check Out Others Lineups</h5>
+            <c:forEach var="user" items="$userLineups">
+            </c:forEach>
+        </div>
+
+	</div>
 
 
 </body>

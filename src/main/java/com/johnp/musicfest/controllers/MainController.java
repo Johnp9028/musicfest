@@ -85,6 +85,15 @@ public class MainController {
     	session.invalidate();
     	return "redirect:/";
     }
+    
+    @GetMapping("/create")
+    public String create(HttpSession session) {
+    	return "create.jsp";
+    }
+    @GetMapping("/view")
+    public String view(HttpSession session) {
+    	return "view.jsp";
+    }
 //things for me to do 
 //    create lineup
 //    save lineup 
