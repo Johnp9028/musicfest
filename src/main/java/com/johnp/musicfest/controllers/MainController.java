@@ -85,9 +85,15 @@ public class MainController {
     	session.invalidate();
     	return "redirect:/";
     }
-
-
-    
+//things for me to do 
+//    create lineup
+//    save lineup 
+//    view yours
+//    update lineup
+//    view others
+//    delete lineup 
+//
+//    
 
     
 

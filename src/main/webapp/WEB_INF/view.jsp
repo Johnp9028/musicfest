@@ -31,7 +31,8 @@
 		}
 
 		table {
-			margin: 50px auto;
+			margin: 50px
+			 auto;
 			border-collapse: collapse;
 			width: 80%;
 			max-width: 1000px;
