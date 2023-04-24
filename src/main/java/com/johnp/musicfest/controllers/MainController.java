@@ -77,7 +77,7 @@ public class MainController {
     	
 
     	model.addAttribute("user", users.findById((Long)session.getAttribute("userId")));
-    	return "dashboard.jsp";
+    	return "home.jsp";
     }
     
     @GetMapping("/logout")
