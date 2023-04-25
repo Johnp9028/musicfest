@@ -5,178 +5,57 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Line Up Music Festival</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 <html>
-	<body>
-	<title>Your Music Fest Lineup</title>
-	<!-- individual CSS but can all be done on the CSS page not here in HTML -->
-    <style>
-		body {
-			background-color: #0B0B0B;
-			color: #FFFFFF;
-			font-family: Arial, sans-serif;
-		}
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-		h1 {
-			text-align: center;
-			margin-top: 50px;
-			font-size: 48px;
-		}
-
-		table {
-			margin: 50px
-			 auto;
-			border-collapse: collapse;
-			width: 80%;
-			max-width: 1000px;
-			background-color: #1C1C1C;
-			box-shadow: 0 0 20px rgba(0,0,0,0.5);
-			text-align: center;
-			font-size: 24px;
-		}
-
-		th, td {
-			padding: 20px;
-			border-bottom: 1px solid #333333;
-		}
-
-		th {
-			background-color: #4B4B4B;
-			font-size: 28px;
-		}
-
-		td:first-child {
-			background-color: #333333;
-			color: #FFFFFF;
-			font-size: 28px;
-		}
-
-		select {
-			padding: 10px;
-			font-size: 18px;
-			background-color: #1C1C1C;
-			color: #FFFFFF;
-			border: none;
-			box-shadow: 0 0 10px rgba(0,0,0,0.3);
-			border-radius: 5px;
-			width: 100%;
-			max-width: 300px;
-			margin: 5px auto;
-		}
-
-		button {
-			padding: 10px 20px;
-			font-size: 24px;
-			background-color: #4B4B4B;
-			color: #FFFFFF;
-			border: none;
-			box-shadow: 0 0 10px rgba(0,0,0,0.3);
-			border-radius: 5px;
-			margin: 20px 10px;
-			cursor: pointer;
-			transition: background-color 0.3s;
-		}
-
-		button:hover {
-			background-color: #333333;
-		}
-	</style>
-	<script src="#"></script>
+	<meta charset="UTF-8">
+	<title>Music fest!</title>
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css"> 
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<h1>Your Music Fest Lineup!</h1>
-	<table>
-		<tr>
-			<th>Time Slot</th>
-			<th>Artist Selection</th>
-			<th>Stage</th>
-		</tr>
-		<tr>
-			<td>6-7</td>
-			<td>
-				<!-- These ids if chosen need to be applied correctly to the other pages for create and edit -->
-				<select id="artist1_stage1">
-					<option value="">Choose artist</option>
-					<option value="Artist 1">Artist 1</option>
-					<option value="Artist 2">Artist 2</option>
-					<option value="Artist 3">Artist 3</option>
-				</select>
-			</td>
-            <td>Stage 1</td>
-		</tr>
-		<tr>
-			<td>7-8</td>
-			<td>
-				<select id="artist2_stage2">
-					<option value="">Choose artist</option>
-					<option value="Artist 1">Artist 1</option>
-					<option value="Artist 2">Artist 2</option>
-					<option value="Artist 3">Artist 3</option>
-				</select>
-			</td>
-            <td>Stage 2</td>
-		<tr>
-			<td>8-9</td>
-			<td>
-				<select id="artist3_stage3">
-					<option value="">Choose artist</option>
-					<option value="Artist 1">Artist 1</option>
-					<option value="Artist 2">Artist 2</option>
-					<option value="Artist 3">Artist 3</option>
-				</select>
-			</td>
-            <td>Stage 3</td>
-		</tr>
-		<tr>
-			<td>9-10</td>
-			<td>
-				<select id="artist4_stage1">
-					<option value="">Choose artist</option>
-					<option value="Artist 1">Artist 1</option>
-					<option value="Artist 2">Artist 2</option>
-					<option value="Artist 3">Artist 3</option>
-				</select>
-			</td>
-            <td>Stage 1</td>
-            </tr> 
-            <tr>
-            <td>10-11</td>
-            <td>
-				<select id="artist3_stage2">
-					<option value="">Choose artist</option>
-					<option value="Artist 1">Artist 1</option>
-					<option value="Artist 2">Artist 2</option>
-					<option value="Artist 3">Artist 3</option>
-				</select>
-			</td>
-            <td>Stage 2</td>
-            </tr>
-            <tr>
-                <td>11-12</td>
-                <td>
-                    <select id="artist3_stage2">
-                        <option value="">Choose artist</option>
-                        <option value="Artist 1">Artist 1</option>
-                        <option value="Artist 2">Artist 2</option>
-                        <option value="Artist 3">Artist 3</option>
-                    </select>
-                </td>
-                <td>Stage 3</td>
-                </tr>
-            <br>
-	<button onclick="goHome()">Back to Home</button>
-    <br>
-	<button onclick="createlineup()">Create Lineup</button>
-	<br>
-	<button onclick="editlineup()">Create Lineup</button>
-	<br>
-	<button onclick="logout()">Logout</button>
+
+         <div class="container">
+			<h4>Posted by: <c:out value="${lineup.user.userName}"/></h4>
+		
+			
+			<p>6-7<span>  </span> <c:out value="${lineup.timeslot1}"/></p>
+			<p>7-8 <span>  </span> <c:out value="${lineup.timeslot2}"/></p>
+			<p>8-9 <span>  </span> <c:out value="${lineup.timeslot3}"/></p>
+			<p>9-10 <span>  </span> <c:out value="${lineup.timeslot4}"/></p>
+			<p>10-11 <span>  </span> <c:out value="${lineup.timeslot5}"/></p>
+			<p>l1-12 <span>  </span> <c:out value="${lineup.timeslot6}"/></p>
+		
+			
+		
+		</div>
+
+
+<a   class="btn btn-outline-danger"href="/home">home</a>
+<a   class="btn btn-outline-danger"href="/logout">logout</a>
+
 </body>
+
 </html>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+

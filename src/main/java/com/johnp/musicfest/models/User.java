@@ -20,6 +20,7 @@ import javax.validation.constraints.Size;
 
 
 
+
 @Entity
 @Table(name="users")
 public class User {
@@ -27,8 +28,11 @@ public class User {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @NotEmpty(message="Username is required!")
+	
+
+
+
+	@NotEmpty(message="Username is required!")
     @Size(min=3, max=30, message="Username must be between 3 and 30 characters")
     private String userName;
     
@@ -48,7 +52,9 @@ public class User {
     @Column(updatable=false)
     private Date createdAt;
     private Date updatedAt;
-    
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+	private List<Lineup> lineups;
+
 
 	public User() {
 		
@@ -119,6 +125,15 @@ public class User {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	
+	public List<Lineup> getLineup() {
+		return lineups;
+	}
+
+	public void setLineups(List<Lineup> lineup) {
+		this.lineups = lineup;
+	} 
+
 	
 
 

@@ -20,7 +20,7 @@
 </head>
 <body>
 	<h1 class="text-center">HOME PAGE</h1>
-	<h1 class="text-center">Welcome, <c:out value="${user.userName}"/></h1><a   class="btn btn-outline-danger"href="/logout">logout</a>
+	<h1 class="text-center">Welcome, <c:out value="${user.userName}"/></h1>
 
 	<div class="mainTop">
         <h2>7-FEST</h2>
@@ -67,8 +67,8 @@
 	<div class="mainBottom">
 
         <div class="bottLeftDiv">
-            <a href="/create">Make Your Lineup</a>
-            <a href="/view">View Your Lineup</a>
+            <a href="/addLineup">Make Your Lineup</a>
+            <a href="/lineup/{id}">View Your Lineup</a>
             <a href="/logout">Logout</a>
         </div>
 

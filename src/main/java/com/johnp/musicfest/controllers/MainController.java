@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
+import com.johnp.musicfest.models.Lineup;
 import com.johnp.musicfest.models.LoginUser;
-
 import com.johnp.musicfest.models.User;
-
+import com.johnp.musicfest.services.LineupService;
 import com.johnp.musicfest.services.UserService;
 
 @Controller
@@ -24,6 +23,7 @@ public class MainController {
 
 	@Autowired
 	private UserService users;
+	private LineupService lineups;
 
     
     @GetMapping("/")
@@ -86,14 +86,41 @@ public class MainController {
     	return "redirect:/";
     }
     
-    @GetMapping("/create")
-    public String create(HttpSession session) {
+
+
+    
+    
+    
+    
+    @GetMapping("/addLineup")
+    public String addLineup(@ModelAttribute("lineup") Lineup lineup,  BindingResult results, Model model, HttpSession session) {
+    	
+    	User user = users.findById((Long)session.getAttribute("userId"));
+    	model.addAttribute("user", user);
+    	
     	return "create.jsp";
     }
-    @GetMapping("/view")
-    public String view(HttpSession session) {
-    	return "view.jsp";
+    
+
+    @PostMapping("/submit")
+    public String createBook(@Valid @ModelAttribute("lineup") Lineup lineup, BindingResult result) {
+
+    	if (result.hasErrors()) {
+    		return "create.jsp";
+    	}
+    	
+    	lineups.create(lineup);
+    	
+    	return "redirect:/home";
     }
+    
+
+    
+
+
+    
+    
+    
 //things for me to do 
 //    create lineup
 //    save lineup 
