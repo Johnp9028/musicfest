@@ -15,5 +15,6 @@ public interface LineupRepository extends CrudRepository<Lineup, Long>{
 
 	List<Lineup> findAll();
 	public Optional<Lineup> findById(Long Id);
+	void deleteById(Long id);
 }
 

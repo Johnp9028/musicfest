@@ -44,13 +44,13 @@
 			<div class="form-row">
 				<form:errors path="password"/>
 				<form:label for="password" path="password">Password:</form:label>
-				<form:input type="text" path="password" class="form-control"/>
+				<form:input type="password" path="password" class="form-control"/>
 			</div>
 			
 			<div class="form-row">
 				<form:errors path="confirm"/>
 				<form:label for="" path="confirm">Confirm:</form:label>
-				<form:input type="text" path="confirm" class="form-control"/>
+				<form:input type="password" path="confirm" class="form-control"/>
 			</div>
 			
 			<div class="form-row">
@@ -73,7 +73,7 @@
 			<div>
 				<form:errors path="password"/>
 				<form:label for="password" path="password">Password:</form:label>
-				<form:input type="text" path="password" class="form-control"/>
+				<form:input type="password" path="password" class="form-control"/>
 			</div>
 			
 			<div class="form-row">

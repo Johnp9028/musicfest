@@ -9,128 +9,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Music Fest Lineup</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="#">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        h1 {
-            font-size: 36px;
-            color: #333;
-            text-align: center;
-            margin: 40px 0 20px 0;
-        }
+	<meta charset="UTF-8">
+	<title>musicfest</title>
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css"> 
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
-        form {
-            width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            border-radius: 10px;
-        }
-
-        label {
-            display: block;
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        select {
-            display: block;
-            font-size: 16px;
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        button:hover {
-            background-color: #3e8e41;
-        }
-    </style>
 </head>
 <body>
-	<h1>Edit Music Fest Lineup</h1>
-	<form method="POST" action="#">
-		<!-- have to change all the ID to fit the data we need to show up.For example, id= "artist1_stage1" -->
-		<label for="stage1">6-7 (Stage 1)</label>
-		<select id="stage1" name="stage1">
-			<option value="">Edit artist</option>
-			<option value="Artist 1">Artist 1</option>
-			<option value="Artist 2">Artist 2</option>
-			<option value="Artist 3">Artist 3</option>
-		</select>
+<div>
+	<h1 class="text-center display-1 bg-dark text-white">Edit Music Fest Lineup</h1>
+	
+		<div class="mainTop">
+		<form:form action="/lineup/${lineup.id}/edit" modelAttribute="lineup" class="form" method="put">
+		
+					<div class="form-row">
+			 	<form:errors path="name" class="error"/>
+				<form:label for="name" path="name">Name your lineup!:</form:label>
+				<form:input type="text" path="name" class="form-control"/>
+			</div>
+		
+			<div class="form-row">
+			 	<form:errors path="timeslot1" class="error"/>
+				<form:label for="timeslot1" path="timeslot1">6-7:</form:label>
+					<select class="form-select"  name ="timeslot1" aria-label="Default select example">
+  						<option selected>Choose an artist!</option>
+  						<option value="Hall and Oats">Hall and Oats</option>
+						<option value="Bilyl Joel">Bilyl Joel</option>
+						<option value="Motion City Soundtrack">Motion City Soundtrack</option>
+					</select>
+			</div>
+			<div class="form-row">
+			 	<form:errors path="timeslot2" class="error"/>
+				<form:label for="timeslot2" path="timeslot2">7-8:</form:label>
+					<select class="form-select" name ="timeslot2"  aria-label="Default select example">
+  						<option selected>Choose an artist!</option>
+						<option value="Thomas Rhett">Thomas Rhett</option>
+						<option value="MOMOLAND ">MOMOLAND</option>
+						<option value="ILLENIUM ">ILLENIUM</option>
+					</select>
+			</div>
+			<div class="form-row">
+			 	<form:errors path="timeslot3" class="error"/>
+				<form:label for="timeslot3"  path="timeslot3">8-9:</form:label>
+					<select class="form-select"  name ="timeslot3" aria-label="Default select example">
+  						<option selected>Choose an artist!</option>
+						<option value="Iann Dior">Iann Dior</option>
+						<option value="The weekend">The weekend</option>
+						<option value="Phil Colins">Phil Colins</option>
+					</select>
+			</div>
+			<div class="form-row">
+			 	<form:errors path="timeslot4" class="error"/>
+				<form:label for="timeslot4" path="timeslot4">9-10:</form:label>
+					<select class="form-select"  name ="timeslot4"  aria-label="Default select example">
+  						<option selected>Choose an artist!</option>
+						<option value="Mayday Parade">Mayday Parade</option>
+						<option value="Blake Shelton">Blake Shelton</option>
+						<option value="Death Cab For Cutie">Death Cab For Cutie</option>
+					</select>
+			</div>
+			<div class="form-row">
+			 	<form:errors path="timeslot5" class="error"/>
+				<form:label for="timeslot5" path="timeslot5">10-11:</form:label>
+					<select class="form-select"   name ="timeslot5" aria-label="Default select example">
+  						<option selected>Choose an artist!</option>
+						<option value="Two Door Cinema">Two Door Cinema</option>
+						<option value="Incubus">Incubus</option>
+						<option value="Blink-182">Blink-182</option>
+					</select>
+			</div>
+			<div class="form-row">
+			 	<form:errors path="timeslot6" class="error"/>
+				<form:label for="timeslot6"  path="timeslot6">11-12:</form:label>
+					<select class="form-select"  name ="timeslot6" aria-label="Default select example">
+				  		<option selected>Choose an artist!</option>
+						<option value="Taylor Swift">Taylor Swift</option>
+						<option value="Elton John">Elton John</option>
+						<option value="Cash Cash">Cash Cash</option>
+					</select>
+			</div>
+			
+			<div class="form-row">
+				<form:errors path="user" class="error"/>
+				<form:input type="hidden" path="user" value="${user.id}" class="form-control"/>
+			</div>
+			
+			
+		<input type="submit" value="Save Selection" class="btn btn-outline-info">
+		
 
-		<label for="stage2">7-8 (Stage 2)</label>
-		<select id="stage2" name="stage2">
-			<option value="">Edit artist</option>
-			<option value="Artist 1">Artist 1</option>
-			<option value="Artist 2">Artist 2</option>
-			<option value="Artist 3">Artist 3</option>
-		</select>
+		
+		
+			
+		</form:form>
+		
+		
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<a href="/home" type="button" class="btn btn-secondary">Home</button></a>
+  			<a href="/logout" button type="button" class="btn btn-secondary">Logout</button></a>
+  			<a href="/lineup/delete/${lineup.id}" button type="button" class="btn btn-secondary">Delete</button></a>
+		</div>
 
-		<label for="stage3">8-9 (Stage 3)</label>
-		<select id="stage3" name="stage3">
-		<option value="">Edit artist</option>
-		<option value="Artist 1">Artist 1</option>
-		<option value="Artist 2">Artist 2</option>
-		<option value="Artist 3">Artist 3</option>
-		</select>
+		</div>
 
-		<label for="stage1">9-10 (Stage 1)</label>
-		<select id="stage1" name="stage1">
-		<option value="">Edit artist</option>
-		<option value="Artist 1">Artist 1</option>
-		<option value="Artist 2">Artist 2</option>
-		<option value="Artist 3">Artist 3</option>
-		</select>
+</div>	
+		
+		
+		
 
-		<label for="stage2">10-11 (Stage 2)</label>
-		<select id="stage2" name="stage2">
-		<option value="">Edit artist</option>
-		<option value="Artist 1">Artist 1</option>
-		<option value="Artist 2">Artist 2</option>
-		<option value="Artist 3">Artist 3</option>
-		</select>
-
-		<label for="stage3">11-12 (Stage 3)</label>
-		<select id="stage3" name="stage3">
-		<option value="">Edit artist</option>
-		<option value="Artist 1">Artist 1</option>
-		<option value="Artist 2">Artist 2</option>
-		<option value="Artist 3">Artist 3</option>
-		</select>
-
-		<button onclick="goHome()">Back to Home</button>
-		<br>
-		<br>
-		<button onclick="updateLineup()">View Lineup</button>
-		<br>
-		<br>
-		<button onclick="logout()">Logout</button>
 	</body>
 	</html>

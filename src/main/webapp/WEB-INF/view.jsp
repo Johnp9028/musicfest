@@ -19,27 +19,26 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>Your Music Fest Lineup!</h1>
+	<h1 class="text-center display-1 bg-dark text-white">Your Music Fest Lineup!</h1>
 
-         <div class="container">
-			<h4>Posted by: <c:out value="${lineup.user.userName}"/></h4>
+         <div class="mainTop">
+			<h1 class="text-center display-5">Posted by: <c:out value="${user.userName}"/></h1>
 		
 			
-			<p>6-7<span>  </span> <c:out value="${lineup.timeslot1}"/></p>
-			<p>7-8 <span>  </span> <c:out value="${lineup.timeslot2}"/></p>
-			<p>8-9 <span>  </span> <c:out value="${lineup.timeslot3}"/></p>
-			<p>9-10 <span>  </span> <c:out value="${lineup.timeslot4}"/></p>
-			<p>10-11 <span>  </span> <c:out value="${lineup.timeslot5}"/></p>
-			<p>l1-12 <span>  </span> <c:out value="${lineup.timeslot6}"/></p>
-		
-			
-		
+			<p>6-7: <span>  </span> <c:out value="${lineup.timeslot1}"/></p>
+			<p>7-8: <span>  </span> <c:out value="${lineup.timeslot2}"/></p>
+			<p>8-9: <span>  </span> <c:out value="${lineup.timeslot3}"/></p>
+			<p>9-10: <span>  </span> <c:out value="${lineup.timeslot4}"/></p>
+			<p>10-11: <span>  </span> <c:out value="${lineup.timeslot5}"/></p>
+			<p>11-12: <span>  </span> <c:out value="${lineup.timeslot6}"/></p>
+
+
+		<div class="btn-group" role="group" aria-label="Basic example">
+  			<a href="/home" type="button" class="btn btn-secondary">Home</button></a>
+  			<a href="/lineup/edit/${lineup.id}" button type="button" class="btn btn-outline-info"><c:out value="Make Changes"></c:out></a>
+  			<a href="/logout" button type="button" class="btn btn-secondary">Logout</button></a>
 		</div>
-
-
-<a   class="btn btn-outline-danger"href="/home">home</a>
-<a   class="btn btn-outline-danger"href="/logout">logout</a>
-
+</div>
 </body>
 
 </html>

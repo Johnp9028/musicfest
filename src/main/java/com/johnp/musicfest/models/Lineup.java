@@ -1,9 +1,5 @@
 package com.johnp.musicfest.models;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -27,8 +23,17 @@ public class Lineup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @NotNull(message = "Timeslot 1 must be provided.")
+    @NotNull(message ="give it a name!")
+    private String name;
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@NotNull(message = "Timeslot 1 must be provided.")
     private String timeslot1;
     @NotNull(message = "Timeslot 2 must be provided.")
     private String timeslot2;
@@ -40,12 +45,6 @@ public class Lineup {
     private String timeslot5;
     @NotNull(message = "Timeslot 6 must be provided.")
     private String timeslot6;
-   
-
-
-	
-	
-
 	
 	@Column(updatable = false)
 	private Date createdAt;
@@ -53,9 +52,8 @@ public class Lineup {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="User_Id")
 	private User user;
-	public Lineup() {
-		
-	}
+	public Lineup() { }
+	
 	@PrePersist
 	protected void onCreate () {
 		this.createdAt= new Date();
@@ -155,6 +153,32 @@ public class Lineup {
 	    return selectedOption;
 	  }
 
+	public Lineup findById(Long id2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setSelectedOption(String selectedOption) {
+		this.selectedOption = selectedOption;
+	}
+
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

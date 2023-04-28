@@ -19,15 +19,17 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
 
-	<h1>Make Your Lineup!</h1>
-
-	<a href="/home">Home</a>
-
+	<h1 class="text-center display-1 bg-dark text-white">Make Your Lineup!</h1>
 	
-		<div class="container">
+		<div class="mainTop">
 		<form:form action="/submit" modelAttribute="lineup" class="form" method="post">
+		
+			<div class="form-row">
+			 	<form:errors path="name" class="error"/>
+				<form:label for="name" path="name">Name your lineup!:</form:label>
+				<form:input type="text" path="name" class="form-control"/>
+			</div>
 		
 			<div class="form-row">
 			 	<form:errors path="timeslot1" class="error"/>
@@ -96,7 +98,7 @@
 			</div>
 			
 			
-		<input type="submit" value="Save Selection">
+		<input type="submit" value="Save Selection" class="btn btn-outline-info">
 		
 
 		
@@ -105,15 +107,14 @@
 		</form:form>
 		
 		
-
-
-	</div>
 	
 	
 
-		<a   class="btn btn-outline-danger"href="/logout">logout</a>
-		
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<a href="/home" type="button" class="btn btn-secondary">Home</button></a>
+  			<a href="/logout" button type="button" class="btn btn-secondary">Logout</button></a>
 		</div>
+		
 		
 		
 
@@ -124,8 +125,6 @@
 
 </body>
 </html>
-
-
 
 
 

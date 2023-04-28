@@ -3,6 +3,7 @@ package com.johnp.musicfest.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,7 +24,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
-public class User {
+public class User  {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,7 +53,7 @@ public class User {
     @Column(updatable=false)
     private Date createdAt;
     private Date updatedAt;
-	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Lineup> lineups;
 
 
@@ -126,6 +127,8 @@ public class User {
 		this.updatedAt = updatedAt;
 	}
 	
+
+	
 	public List<Lineup> getLineup() {
 		return lineups;
 	}
@@ -134,11 +137,10 @@ public class User {
 		this.lineups = lineup;
 	} 
 
-	
 
 
 
  
 
 }
-   
+     
